@@ -73,7 +73,7 @@ div.col-lg-4{}
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active menu"><a href="#home">Home</a></li>
+            <li class="menu"><a href="#home">Home</a></li>
             <li class="menu"><a href="#about">About</a></li>
             <li class="menu"><a href="#contact">Contact</a></li>
           </ul>
@@ -314,13 +314,13 @@ div.col-lg-4{}
 </section>
 	
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
 
-    <script type="text/javascript">
-    $(function(){
+   <script type="text/javascript">
 		
+    // toggle view processing
 		$('button.btn-toggle').on('click', function(){
 			$("span.glyphicon").toggleClass('glyphicon-th-large').toggleClass('glyphicon-th');
 			$('div.col-my').toggleClass('col-lg-2').toggleClass('col-lg-4')
@@ -332,44 +332,41 @@ div.col-lg-4{}
 	         $('div.clearfix-6').toggleClass('visible-sm-block').toggleClass('visible-md-block');
 
 		})
-		   	
-    	$('img').on('click', function(){
+
+    //modal window content processing   
+    $('img').on('click', function(){
+    	var body = $('div.modal-body');
+    	var pic = $(this).parent().clone().find('img').removeClass().addClass('img_modal').parent().html();
+    	var src = $(this).attr('src');
     		
-    		var body = $('div.modal-body');
-    		var pic = $(this).parent().clone().find('img').removeClass().addClass('img_modal').parent().html();
-    		  var src = $(this).attr('src');
-    		  
+      body.find('img').remove();
+    	body.html(pic);
 
-    		   body.find('img').remove();
-    			 body.html(pic);
+    	$('#myModal').modal('show');
+    	$('h4.modal-title').text(src.substring(src.lastIndexOf('/')+1,src.length));
+  	});	
 
-    		$('#myModal').modal('show');
-     		$('h4.modal-title').text(src.substring(src.lastIndexOf('/')+1,src.length));
+    // nav menu & routing
+    location.hash=location.hash||'home';
+    nav_menu();
+    router();
+    window.addEventListener('hashchange',router);
 
-    	});	
-    })
-
-    	function nav_menu(){
-        $('li.menu').on('click', function(){
-          $('li.menu').removeClass('active');
-          $(this).addClass('active');
-        });
-      }
-    	nav_menu();
-
-      location.hash=location.hash||'home';
-      router();
-      window.addEventListener('hashchange',router);
-      function router(){
+    function nav_menu(){
+      $('li.menu').removeClass('active').each(function(){
+        if ($(this).find('a').attr("href")==window.location.hash){
+           $(this).addClass('active');
+        };
+      });
+    };
+    
+    function router(){
         $('section').addClass("hide");
         $('.'+ window.location.hash.split('#')[1]).removeClass("hide");
+        nav_menu();
       };
 
-
-
-    </script>
-      
-
+   </script>
   </body>
 </html>
 
