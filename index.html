@@ -19,14 +19,11 @@
     <!--Include Your Style Sheets next -->
     
     <style>
-/*body {
-    background-color: grey;
-
-}*/
-
+.hide{
+  display: none;
+}
 .img_my{
 	width:100%;
-	/*height: 100%;*/
 	margin: 10px;
 }
 
@@ -40,33 +37,26 @@ img.img_my:hover {
 	display: block;
 	margin: 0 auto;
 }
-.about, .contact {
-	display: none;
-} 
-
-/*.container, .row {
-margin: 0 auto;
-}*/
-/*col-sm-6 col-md-4 col-lg-2*/
-
-/*div.col-xs-2{height: auto;};*/
+ section{
+  display:block;
+}
+.btn-toggle{
+  float: right; 
+  margin-right: -22px;
+}
+/*div.col-xs-2{};*/
 /*/*@screen-sm-min*/
 /*@media screen and (min-width:768px){
-div.col-my{height: 46vh;}
-div.col-sm-12{height: auto;};
+div.col-sm-12{};
 }*/
 /*@screen-md-min*/
 /*@media screen and (min-width:992px){
-div.col-my{height: 39vh;}
-div.col-md-6{height: 60vh;}	
+div.col-md-6{}	
 }*/
 /*@screen-lg-min*/
 /*@media screen and (min-width:1200px){
-div.col-my{height: auto;}
-div.col-lg-4{height: 48vh;}
+div.col-lg-4{}
 }*/
-
-
 </style>
   </head>
   <body>
@@ -79,61 +69,63 @@ div.col-lg-4{height: 48vh;}
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Galery page</a>
+          <a class="navbar-brand" href="">Galery page</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active #home"><a href="#">Home</a></li>
-            <li class=" #About"><a href="#about">About</a></li>
-            <li class=" #Contact"><a href="#contact">Contact</a></li>
+            <li class="active menu"><a href="#home">Home</a></li>
+            <li class="menu"><a href="#about">About</a></li>
+            <li class="menu"><a href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container logo">
 
-      <div class="starter-template">
-
+      
 
       <br/><br/><br/>
 
         <h1 >Pure Nature Galery</h1>
         <p  >Feel the beauty of the nature <br> </p>
-      </div>
+
 
     </div><!-- /.container -->
 
+    
+
+
+<section class="hide home">
     <div class="container page-header">
-    	<div class="col-xs-11" > </div>
-    	<div class="col-xs-1"> 
-    		<button type="button" class="btn btn-default btn-toggle"
-    		 style="float:right; margin-right: -22px" >
-  				<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
-			</button>
-    	</div>
+      <div class="col-xs-11" > </div>
+      <div class="col-xs-1"> 
+        <button type="button" class="btn btn-default btn-toggle">
+          <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+      </button>
+      </div>
     </div><!-- /.container -->
 
     <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Preview</h4>
-      </div>
-      <div class="modal-body">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save</button>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Preview</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-    <div class = "container home">
+    <div class = "container">
 
     <div class = "row ">
    <div class="col-sm-6 col-md-4 col-lg-2  col-my">
@@ -289,45 +281,45 @@ div.col-lg-4{height: 48vh;}
     </div>
   
 
-</div>
+  </div>
+</section>
 
-	<div class = "container about ">
-		<div class="panel panel-default">
-	  		<div class="panel-heading">Responsive foto galery template</div>
-	  		<div class="panel-body">
-	   		<p >
-				This "mobile first" template created with Bootsrap Framework and Jquery. <br/>
-				You can download it from DmitryVF's Github page and use it for free.
-			</p>
-	  		</div>
-		</div>
-		
-	</div>
+<section class = "hide about">
+  <div class = "container page-header">
+    <div class="panel panel-default">
+        <div class="panel-heading">Responsive foto galery template</div>
+        <div class="panel-body">
+        <p >
+        This "mobile first" template created with Bootsrap Framework and jquery. <br/>
+        You can download it from DmitryVF's Github page and use it for free.
+      </p>
+        </div>
+    </div>
+  </div>
+</section>
 
-	<div class = "container contact ">
-			<div class="panel panel-default">
-				<div class="panel-heading">Contacts</div>
-	  			<div class="panel-body">
-		   		<p >
-		   		<a href = "https://github.com/DmitryVF"> DmitryVF's Github page</a>
-				</p>
-	  		</div>
-
-
-	</div>
+	
+<section class = "hide contact">
+  <div class = "container page-header">
+      <div class="col-xs-11" > </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">Contacts</div>
+          <div class="panel-body">
+          <p >
+          <a href = "https://github.com/DmitryVF"> DmitryVF's Github page</a>
+        </p>
+        </div>
+      </div>
+  </div>
+</section>
+	
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
-    <!-- If you don't have the files saved locally, make sure to link it in CodePen, just like you linked the CSS. -->
 
     <script type="text/javascript">
     $(function(){
-
-
-
-         // $("div").hide();
-    	//$('btn').on('click').hide();
 		
 		$('button.btn-toggle').on('click', function(){
 			$("span.glyphicon").toggleClass('glyphicon-th-large').toggleClass('glyphicon-th');
@@ -348,68 +340,35 @@ div.col-lg-4{height: 48vh;}
     		  var src = $(this).attr('src');
     		  
 
-    		     body.find('img').remove();
+    		   body.find('img').remove();
     			 body.html(pic);
 
     		$('#myModal').modal('show');
      		$('h4.modal-title').text(src.substring(src.lastIndexOf('/')+1,src.length));
 
     	});	
-
-    	$('.about').hide();
-    	$('.contact').hide();	
-
-    	// $('li').on('click', function(){
-    	// 	$('li').removeClass('active');
-    	// 	$(this).addClass('active');
-   			
-    		// <li class="active home"><a href="#">Home</a></li>
-    	//});
-
     })
-    	// router
 
-    	function router(){
-    				//doesn't understand # in css classes
-    			var about = 'about';
-    			$('li').removeClass('active');
-    			$('li.'+about).addClass('active');
-        		// $('li.'+window.location.hash).addClass('active');
+    	function nav_menu(){
+        $('li.menu').on('click', function(){
+          $('li.menu').removeClass('active');
+          $(this).addClass('active');
+        });
+      }
+    	nav_menu();
+
+      location.hash=location.hash||'home';
+      router();
+      window.addEventListener('hashchange',router);
+      function router(){
+        $('section').addClass("hide");
+        $('.'+ window.location.hash.split('#')[1]).removeClass("hide");
+      };
 
 
-    		switch (window.location.hash) {
-			  case '#home':
-			    $('.home').show();
-			  	$('.about').hide();
-    			$('.contact').hide();
-    			$('.btn-toggle').show();
-			    break;
-			  case '#about':
-			    $('.home').hide();
-			  	$('.about').show();
-    			$('.contact').hide();
-    			$('.btn-toggle').hide();
-			    break;
-			  case '#contact':
-			  	$('.home').hide();
-			  	$('.about').hide();
-    			$('.contact').show();
-    			$('.btn-toggle').hide();
-			    break;
-			  default:
-			  	$('.home').show();
-			  	$('.about').hide();
-    			$('.contact').hide();
-    			$('.btn-toggle').show();
-		    }
-
-    	}
-    	router();
-    	window.addEventListener('hashchange', router);
-    		
 
     </script>
-
+      
 
   </body>
 </html>
